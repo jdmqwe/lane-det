@@ -1,23 +1,25 @@
 # lane-detecion
 
-### ---Geometric Perspective.py
+### ---Geometric Perspective.py---
 
-'''
+```
+
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import cv2
 import numpy as np
-'''
+
+```
 
 ##### 각종 라이브러리들을 호출합니다.
 
-'''
+```
 img = cv2.VideoCapture('line.mp4')
 net, frame = img.read()
 height, width, channel = frame.shape
 srcPoint = np.array([[550, 500], [730, 500], [1000, 720], [200, 720]], dtype=np.float32)
 dstPoint = np.array([[0, 0], [width, 0], [width, height], [0, height]], dtype=np.float32)
-'''
+```
 
 ##### line.mp4 파일을 호출합니다.
 ##### frame 에다가 line.mp4의 이미지를 저장합니다.
@@ -25,7 +27,7 @@ dstPoint = np.array([[0, 0], [width, 0], [width, height], [0, height]], dtype=np
 ##### 영상에서 평면으로 변환할 부분의 좌표를 입력합니다.
 ##### 변환된 영상이 어떤 크기를 가질지 지정합니다.
 
-'''
+```
 while True:
     net, frame = img.read()
     matrix = cv2.getPerspectiveTransform(srcPoint, dstPoint)
@@ -43,4 +45,4 @@ while True:
     plt.figure(figsize=(10,8))
     plt.imshow(dst, cmap='gray')
     plt.show()
-'''
+```
