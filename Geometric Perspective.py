@@ -6,7 +6,6 @@ import numpy as np
 img = cv2.VideoCapture('line.mp4')
 net, frame = img.read()
 height, width, channel = frame.shape
-#srcPoint = np.array([[550, 500], [730, 500], [1000, 720], [200, 720]], dtype=np.float32)
 srcPoint = np.array([[550, 500], [730, 500], [1000, 720], [200, 720]], dtype=np.float32)
 dstPoint = np.array([[0, 0], [width, 0], [width, height], [0, height]], dtype=np.float32)
 
