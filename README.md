@@ -32,7 +32,12 @@ while True:
     net, frame = img.read()
     matrix = cv2.getPerspectiveTransform(srcPoint, dstPoint)
     dst = cv2.warpPerspective(frame, matrix, (width, height))
+```
+##### line.mp4 에서 추출한 img 변수를 frame 에 저장합니다.
+##### 
 
+
+```
     
     gray = cv2.cvtColor(dst, cv2.COLOR_RGB2GRAY)
     kernel_size = 5
