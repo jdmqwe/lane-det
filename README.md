@@ -1,2 +1,0 @@
-# lane-det
-Seed
